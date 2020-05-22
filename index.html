@@ -1,0 +1,128 @@
+<html>
+  <head>
+    <title></title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #9bc1bc;
+            color: rgba(0,0,0,0.75);
+            font-family: sans-serif;
+        }
+        input {
+            margin: 5px 0;
+            border: 1px solid grey;
+            padding: 10px;
+            width: 125px;
+            border-radius: 5px;
+        }
+        li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        ul {
+            padding: 0;
+        }
+        .good {
+            background: #aad576;
+        }
+
+        .too-big {
+            background: #f79d65;
+        }
+
+        .empty {
+            background: #efefef;
+        }
+        .card-wrapper {
+            background: white;
+            border-radius: 7px;
+            box-shadow: 0px 1px 3px rgba(0,0,0,0.1), 0px 3px 6px rgba(0,0,0,0.1),0px 6px 12px rgba(0,0,0,0.1),0px 12px 24px rgba(0,0,0,0.2);
+
+        }
+        .card {
+            background: white;
+            padding: 25px 30px 0;
+            border-radius: 7px 7px 0 0;
+            /* box-shadow: 0px 1px 3px rgba(0,0,0,0.1), 0px 3px 6px rgba(0,0,0,0.1),0px 6px 12px rgba(0,0,0,0.1),0px 12px 24px rgba(0,0,0,0.2); */
+            
+        }
+        .card-bottom {
+           padding: 15px 30px 15px;
+            border-radius: 0 0 7px 7px;
+        }
+
+        .card-bottom input {
+            border: none;
+            background: none;
+            text-align: center;
+            width: 50px;
+            padding: 0;
+        }
+    </style>
+    <script>
+        function girth() {
+            // var l = 0; 
+            var n = 1;  
+            
+            var h = Number(document.getElementById("height").value)*2.54;
+            var w = Number(document.getElementById("width").value)*2.54;
+            var l = Number(document.getElementById("length").value)*2.54;
+            var n = Number(document.getElementById("boards").value);
+
+            if (n > null) {
+                var s = (((h*2)+(w*2))*n+l);
+            }
+            else {
+                var s = (((h*2)+(w*2))+l);
+            };
+            if (s >= 300) {
+                document.getElementById("result").classList.add('too-big')
+                document.getElementById("result").classList.remove('empty')
+
+            }
+            else
+            {
+                document.getElementById("result").classList.add('good')
+                document.getElementById("result").classList.remove('too-big')
+                document.getElementById("result").classList.remove('empty')
+            }
+            return document.getElementById("answer").value = Math.ceil(s);
+        }
+    </script>
+  </head>
+  
+  <body>
+      <h1>Girth Calculator</h1>
+      <div class="card-wrapper">
+    <div class="card">
+        <form>
+
+            <label>Height</label><br>
+            <input id="height" type="text" name="height"><br>
+
+            <label>Width</label><br>
+            <input id="width" type="text" name="width"><br>
+
+            <label>Length</label><br>
+            <input id="length" type="text" name="length"><br>
+
+            <label>Number of Boards</label><br>
+            <input id="boards" type="text" name="length"><br>
+
+        <input id="clickMe" type="button" value="=" onclick="girth();" />
+
+        </form>
+    </div>
+    <div id="result" class="card-bottom empty">
+        <label><strong>Girth(cm): </strong></label>
+        <input id="answer" type="text" name="answer">
+    </div>
+</div>
+    
+  </body>
+
+</html>
