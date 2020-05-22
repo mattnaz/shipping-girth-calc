@@ -1,6 +1,7 @@
 <html>
   <head>
     <title></title>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;1,900&display=swap" rel="stylesheet">
     <style>
         body {
             display: flex;
@@ -11,7 +12,8 @@
             background: -webkit-linear-gradient(45deg, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
             background: linear-gradient(45deg, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
             color: rgba(0,0,0,0.75);
-            font-family: sans-serif;
+            font-family: 'Work Sans', sans-serif;
+            overflow: hidden;
         }
         input {
             margin: 5px 0;
@@ -28,6 +30,22 @@
         ul {
             padding: 0;
         }
+
+        h1 {
+            text-transform: uppercase;
+            font-size: 7rem;
+            letter-spacing: 1px;
+            z-index: -1;
+            /* position: absolute; */
+            transform: rotateZ(-15deg);
+            font-style: italic;
+            font-family: 'Work Sans', sans-serif;
+            line-height: .8em;
+            text-align: center;
+            font-weight: 900;
+
+        }
+
         .good {
             background: #aad576;
         }
@@ -53,16 +71,32 @@
             
         }
         .card-bottom {
-           padding: 15px 30px 15px;
             border-radius: 0 0 7px 7px;
         }
 
         .card-bottom input {
-            border: none;
+            margin-left: -20px;
+            width: 100%;
+            border: 1px solid transparent;
             background: none;
             text-align: center;
-            width: 50px;
-            padding: 0;
+            font-size: 24px;
+            font-weight: 700;
+            width: 125px;
+            padding: 15px 15px 15px 15px;
+        }
+
+        .card-bottom input:disabled {
+            color: rgba(0,0,0,0.75);
+            font-weight: 900;
+        }
+
+        .card-bottom label {
+            color: rgba(0,0,0,0.3);
+            font-size: 10px;
+            position: relative;
+            top: -20px;
+            left: 10px;
         }
     </style>
     <script>
@@ -112,7 +146,7 @@
             <label>Length</label><br>
             <input id="length" type="text" name="length"><br>
 
-            <label>Number of Boards</label><br>
+            <label># of Boards</label><br>
             <input id="boards" type="text" name="length"><br>
 
         <input id="clickMe" type="button" value="=" onclick="girth();" />
@@ -121,7 +155,7 @@
     </div>
     <div id="result" class="card-bottom empty">
         <label><strong>Girth(cm): </strong></label>
-        <input id="answer" type="text" name="answer">
+        <input disabled id="answer" type="text" name="answer" value="0">
     </div>
 </div>
     
