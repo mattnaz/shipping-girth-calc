@@ -7,22 +7,28 @@ function girth() {
     var l = Number(document.getElementById("length").value)*2.54;
     var n = Number(document.getElementById("boards").value);
 
-    if (n > null) {
-        var s = (((h*2)+(w*2))*n+l);
+    var i = 0;
+    do {
+        var s = (((h*2)+(w*2))*i+l);
+        i++;
     }
-    else {
-        var s = (((h*2)+(w*2))+l);
-    };
+    while (s < 300);
+    i--;
+    i--;
+    var s = (((h*2)+(w*2))*i+l);
+    document.getElementById("boards").value = i;
+   
+  
     if (s >= 300) {
-        document.getElementById("result").classList.add('too-big')
-        document.getElementById("result").classList.remove('empty')
+        document.getElementById("result").classList.add('too-big');
+        document.getElementById("result").classList.remove('empty');
 
     }
     else
     {
-        document.getElementById("result").classList.add('good')
-        document.getElementById("result").classList.remove('too-big')
-        document.getElementById("result").classList.remove('empty')
+        document.getElementById("result").classList.add('good');
+        document.getElementById("result").classList.remove('too-big');
+        document.getElementById("result").classList.remove('empty');
     }
     return document.getElementById("answer").value = Math.ceil(s);
 }

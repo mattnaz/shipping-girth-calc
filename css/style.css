@@ -59,7 +59,6 @@ h1 {
     line-height: .8em;
     text-align: center;
     font-weight: 900;
-
 }
 
 .good {
@@ -91,6 +90,7 @@ h1 {
 }
 
 .card-bottom input {
+    text-align: left;
     margin-left: -20px;
     width: 100%;
     border: 1px solid transparent;
@@ -102,6 +102,9 @@ h1 {
     padding: 15px 15px 15px 15px;
 }
 
+.card-bottom input:last-child {
+    margin-left: -30px;
+}
 .card-bottom input:disabled {
     color: rgba(0,0,0,0.75);
     font-weight: 900;
@@ -113,4 +116,12 @@ h1 {
     position: relative;
     top: -20px;
     left: 10px;
+}
+
+.card-bottom hr {
+    width: 80%;
+    margin: 0 auto;
+    border: none;
+    border-top: 1px solid rgba(0,0,0,0.25);
+    height: 1px;
 }

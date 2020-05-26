@@ -12,25 +12,42 @@
     <div class="card">
         <form>
             <label>Height</label><br>
-            <input id="height" type="text" name="height"><br>
+            <select name="height" id="height">
+                <option value="0.75">1</option>
+            </select><br>
 
             <label>Width</label><br>
-            <input id="width" type="text" name="width"><br>
+            <select name="width" id="width">
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select><br>
 
             <label>Length</label><br>
-            <input id="length" type="text" name="length"><br>
-
-            <label># of Boards</label><br>
-            <input id="boards" type="text" name="length"><br>
+            <select name="length" id="length">
+                <option value="12">12</option>
+                <option value="24">24</option>
+                <option value="36">36</option>
+            </select><br>
 
         <button id="clickMe" type="button" value="=" onclick="girth();">=</button>
 
         </form>
     </div>
         <div id="result" class="card-bottom empty">
-            <label><strong>Girth(cm): </strong></label>
-            <input disabled id="answer" type="text" name="answer" value="0">
+            
+                <label><strong>Girth(cm): </strong></label>
+                <input disabled id="answer" type="text" name="answer" value="0"><br>
+                <hr>
+            	<label><strong># of Boards</strong></label>
+            	<input disabled id="boards" type="text" name="length" value="0">
+            
         </div>
+
+
     
   </body>
 
