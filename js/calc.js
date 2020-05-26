@@ -5,8 +5,9 @@ function girth() {
     var h = Number(document.getElementById("height").value)*2.54;
     var w = Number(document.getElementById("width").value)*2.54;
     var l = Number(document.getElementById("length").value)*2.54;
-    var n = Number(document.getElementById("boards").value);
-
+    var t = Number(document.getElementById("type").value);
+    console.log("h= "+h+"w= "+w+"l= "+l);
+    // Calculate Number of boards and girth
     var i = 0;
     do {
         var s = (((h*2)+(w*2))*i+l);
@@ -15,10 +16,15 @@ function girth() {
     while (s < 300);
     i--;
     i--;
-    var s = (((h*2)+(w*2))*i+l);
-    document.getElementById("boards").value = i;
-   
-  
+    var s = (((h*2)+(w*2))*i+l); //girth calculation
+    document.getElementById("boards").value = i; // assign value of boards
+    var actual = ((h*w*l)*t);
+    document.getElementById("actual").value = Math.ceil(actual);
+
+    var w = (h*w*l)/6000;
+    console.log(w);
+    document.getElementById("weight").value = Number.parseFloat(w).toPrecision(2)*1000;
+    
     if (s >= 300) {
         document.getElementById("result").classList.add('too-big');
         document.getElementById("result").classList.remove('empty');

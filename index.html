@@ -8,9 +8,19 @@
   
   <body>
       <h1>Shipping Calculator</h1>
-      <div class="card-wrapper">
+<div class="card-wrapper">
     <div class="card">
         <form>
+            <label>Wood Type</label><br>
+            <select name="type" id="type">
+                <option value="0.74">Red Oak</option>
+                <option value="0.7">Walnut</option>
+                <option value="0.77">White Oak</option>
+                <option value="0.5">Polar</option>
+                <option value="0.64">Sapele</option>
+                <option value="0.75">Maple</option>
+                <option value="0.8">Cherry</option>
+            </select><br>
             <label>Height</label><br>
             <select name="height" id="height">
                 <option value="0.75">1</option>
@@ -18,11 +28,11 @@
 
             <label>Width</label><br>
             <select name="width" id="width">
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
+                <option value="2.5">3</option>
+                <option value="3.25">4</option>
+                <option value="4.5">5</option>
+                <option value="5.5">6</option>
+                <option value="7.25">7</option>
                 <option value="8">8</option>
             </select><br>
 
@@ -38,15 +48,29 @@
         </form>
     </div>
         <div id="result" class="card-bottom empty">
-            
-                <label><strong>Girth(cm): </strong></label>
-                <input disabled id="answer" type="text" name="answer" value="0"><br>
-                <hr>
-            	<label><strong># of Boards</strong></label>
-            	<input disabled id="boards" type="text" name="length" value="0">
-            
-        </div>
 
+                <span>
+                    <label><strong>Girth(cm): </strong></label>
+                    <input disabled id="answer" type="text" name="answer" value="0">
+                </span>
+
+            	<span>
+                    <label><strong># of Boards</strong></label>
+                        <input disabled id="boards" type="text" name="length" value="0">
+                </span>
+
+                <span>
+                    <label><strong>Weight per Board(g)</strong></label>
+                    <input disabled id="weight" type="text" name="length" value="0">
+                </span>
+
+                <span>
+                    <label><strong>Actual Weight(g)</strong></label>
+                	<input disabled id="actual" type="text" name="length" value="0">
+                </span>
+
+        </div>
+</div>
 
     
   </body>
