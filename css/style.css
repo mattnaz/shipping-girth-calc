@@ -8,7 +8,7 @@ body {
     background: linear-gradient(45deg, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: rgba(0,0,0,0.75);
     font-family: 'Work Sans', sans-serif;
-    overflow: visible;
+    overflow: hidden;
 }
 input, select {
     margin: 5px 0;
@@ -47,19 +47,21 @@ ul {
     padding: 0;
 }
 
-h1 {
+.title {
     text-transform: uppercase;
-    font-size: 7rem;
+    font-size:5rem;
     letter-spacing: 1px;
     z-index: -1;
-    /* position: absolute; */
     transform: rotateZ(-15deg);
     font-style: italic;
     font-family: 'Work Sans', sans-serif;
     line-height: .8em;
     text-align: center;
     font-weight: 900;
+    margin-bottom: 100px;
+    word-spacing: 9999rem;
 }
+
 
 .good {
     background: #aad576;
