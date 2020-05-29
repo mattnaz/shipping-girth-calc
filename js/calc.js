@@ -2,28 +2,33 @@ function girth() {
     // var l = 0; 
     var n = 1;  
     
-    var h = Number.parseFloat((document.getElementById("height").value)*2.54).toPrecision(2);
-    var w = Number.parseFloat((document.getElementById("width").value)*2.54).toPrecision(2);
-    var l = Number.parseFloat((document.getElementById("length").value)*2.54).toPrecision(2);
+    var h = Number(document.getElementById("height").value)*2.54;
+    var w = Number(document.getElementById("width").value)*2.54;
+    var l = Number(document.getElementById("length").value)*2.54;
     var t = Number(document.getElementById("type").value);
     console.log("h= "+h+"w= "+w+"l= "+l);
-    console.log(h*w*l);
     // Calculate Number of boards and girth
-    var i = 0;
+    var i = 1;
     do {
-        var s = (((h*2)+(w*2))*i+l);
+        var s = (((h*i)+w)*2+l);
         i++;
+        console.log(i);
     }
     while (s < 300);
     i--;
     i--;
-    var s = (((h*2)+(w*2))*i+l); //girth calculation
-    document.getElementById("boards").value = i; // assign value of boards
+    var s = (((h*i)+w)*2+l); //girth calculation
     var actual = ((h*w*l)*t);
+    if ((actual*i)>30000) {
+        document.getElementById("boards").value = Math.floor(30000/actual); // assign value of boards
+    }
+    else {
+        document.getElementById("boards").value = i;
+    }
     document.getElementById("actual").value = Math.ceil(actual);
 
     var w = (h*w*l)/6000;
-    // console.log(w);
+    console.log(w);
     document.getElementById("weight").value = Number.parseFloat(w).toPrecision(2)*1000;
     
     if (s >= 300) {
