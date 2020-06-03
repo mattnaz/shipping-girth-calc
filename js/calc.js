@@ -14,16 +14,19 @@ function girth() {
         i++;
         console.log(i);
     }
-    while (s < 300);
+    while (s < 270);
     i--;
-    i--;
+
     var s = (((h*i)+w)*2+l); //girth calculation
     var actual = ((h*w*l)*t);
-    if ((actual*i)>30000) {
-        document.getElementById("boards").value = Math.floor(30000/actual); // assign value of boards
+    if ((actual*i)>29000) {
+        var maxBoards = Math.floor(29000/actual);
+        document.getElementById("boards").value = maxBoards; // assign value of boards
+        document.getElementById("totalWeight").value = Number.parseFloat((actual*maxBoards)/1000).toPrecision(4);
     }
     else {
         document.getElementById("boards").value = i;
+        document.getElementById("totalWeight").value = Number.parseFloat((actual*i)/1000).toPrecision(4);
     }
     document.getElementById("actual").value = Math.ceil(actual);
 
