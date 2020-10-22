@@ -1,6 +1,8 @@
 body {
+    padding: 100px;
     display: flex;
     flex-direction: column;
+    align-content: center;
     align-items: center;
     justify-content: center;
     background: #2193b0;  /* fallback for old browsers */
@@ -76,6 +78,7 @@ ul {
     background: #efefef;
 }
 .card-wrapper {
+    margin: auto;
     display: flex;
     flex-direction: row;
     background: white;
@@ -103,7 +106,6 @@ ul {
     justify-items: center;
     justify-content: space-between;
     align-items: center;
-    flex: content;
     border-radius: 0 7px 7px 0px;
     text-align: center;
     padding-top: 20px;
